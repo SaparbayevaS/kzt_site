@@ -7,6 +7,92 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <h1>Ақылды тұрғын үй таңдауы</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#about">Жоба</a></li>
+            <li><a href="#problems">Мәселелер</a></li>
+            <li><a href="#how-it-works">Жүйе</a></li>
+            <li><a href="#search">Тұрғын үй іздеу</a></li>
+            <li><a href="#features">Мүмкіндіктер</a></li>
+            
+            <li><a href="#development">Даму жоспары</a></li>
+        </ul>
+    </nav>
+    
+    <section id="about">
+        <h2>Жобаны таныстыру</h2>
+        <p>«Ақылды тұрғын үй таңдауы» – сіздің бюджетіңізге сай ең жақсы тұрғын үйді табуға көмектесетін сервис.</p>
+    </section>
+    
+    <section id="problems">
+        <h2>Неліктен тұрғын үй таңдау қиын?</h2>
+        <ul>
+            <li>Ақпараттың шашыраңқылығы</li>
+            <li>Бағаның тұрақсыздығы</li>
+            <li>Қаржылық қиындықтар</li>
+            <li>Алаяқтық қаупі</li>
+        </ul>
+    </section>
+    
+    <section id="how-it-works">
+        <h2>Жүйе қалай жұмыс істейді?</h2>
+        <ol>
+            <li>Тұрғын үй кешенінің атауын және бюджетіңізді енгізесіз.</li>
+            <li>Жүйе инфрақұрылымды, көлік қатынасын, өмір сүру деңгейін талдайды.</li>
+            <li>Ең тиімді төлем тәсілдерін есептейді.</li>
+            <li>Толық есеп пен ұсыныстар аласыз.</li>
+        </ol>
+    </section>
+
+    <section id="search">
+        <h2>Тұрғын үй іздеу</h2>
+        <label for="city">Қала:</label>
+        <select id="city">
+            <option value="">Барлық қалалар</option>
+            <option value="Алматы">Алматы</option>
+            <option value="Астана">Астана</option>
+            <option value="Шымкент">Шымкент</option>
+            <option value="Ақтөбе">Ақтөбе</option>
+            <option value="Қарағанды">Қарағанды</option>
+        </select>
+
+        <label for="maxPrice">Макс. баға (млн ₸):</label>
+        <input type="number" id="maxPrice" placeholder="Мысалы: 50">
+
+        <button onclick="searchHousing()">Іздеу</button>
+
+        <div id="results"></div>
+    </section>
+    <section id="features">
+        <h2>Жобаның мүмкіндіктері</h2>
+        <ul>
+            <li>Инфрақұрылым картасы</li>
+            <li>Баға өзгеруін болжау</li>
+            <li>Ипотека және төлем тәсілдері</li>
+            <li>Қолданушылар пікірлері</li>
+            <li>Жаңа аудандар туралы ақпарат</li>
+            <li>VR/AR мүмкіндігі</li>
+        </ul>
+    </section>
+
+
+    <section id="development">
+        <h2>Жобаның даму жоспары</h2>
+        <ul>
+            <li>Деректер базасын кеңейту</li>
+            <li>Банктермен интеграция</li>
+            <li>Агенттіктермен серіктестік</li>
+            <li>Мобильді қосымша әзірлеу</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© 2025 Ақылды Тұрғын Үй Таңдауы</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
