@@ -179,3 +179,341 @@ body {
 #search select, #search #maxPrice {
     box-sizing: border-box; /* Для правильного расчета ширины */
 }
+
+.content ul {
+    cursor: pointer;
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex:1;
+    text-align: center;
+    list-style: none;
+}
+
+#development h2,
+#features h2 {
+    text-align: center;
+    color: #3a3a3a;
+}
+#features {
+    padding-top: 50px;
+}
+
+#development {
+    padding-top: 150px;
+}
+
+#features li {
+    min-height: 70vh;
+    margin-top:3px;
+    padding-bottom: 3px;
+    z-index: 1;
+    order: 1;
+    display: inline-block;
+    cursor: pointer;
+    border:hidden;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1px;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #ffffff;
+    writing-mode: vertical-lr;
+    text-orientation: sideways;
+    transition: background-image  0.3s ease;
+    transform: scale(-1);
+    margin-inside: var(0);
+    background-position:center;
+
+}
+
+#map {
+    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)),url("map1-og.jpg");
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:17%;
+
+}
+
+#map:hover {
+    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)), url("map1.jpg");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    width:100%;
+    transition: 0.2s;
+    position: static;
+    content-visibility: visible;
+}
+
+#price {
+    background-origin: border-box;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)),url("pred2-og.png");
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:17%;
+
+}
+
+
+#price:hover {
+    background-size: cover;
+    background-position: bottom;
+    text-align: center;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)), url("pred2.png");
+    width:100%;
+    transition: 0.2s;
+    position: static;
+    content-visibility: visible;
+
+}
+
+#ipoteka {
+
+    background-origin: border-box;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)),url("pay3-og.png");
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:17%;
+
+}
+
+#ipoteka:hover {
+    background-size: cover;
+    text-align: center;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)), url("pay3.jpg");
+    width:100%;
+    transition: 0.5s;
+    position: static;
+    content-visibility: visible;
+    background-position: center;
+}
+
+#reviews {
+    background-origin: border-box;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)),url("reviews4-og.png");
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:17%;
+}
+
+#reviews:hover {
+    background-size: cover;
+    text-align: center;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)), url("reviews4.png");
+    width:100%;
+    transition: 0.5s;
+    position: static;
+    content-visibility: visible;
+    background-position: center;
+
+}
+
+#newPpl {
+
+    background-origin: border-box;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)),url("Ppl5-og.png");
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:17%;
+
+}
+
+#newPpl:hover {
+    background-size: cover;
+    text-align: center;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)), url("Ppl5.png");
+    width:100%;
+    transition: 0.5s;
+    position: static;
+    content-visibility: visible;
+    background-position: center;
+}
+
+#VR\/AR {
+    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)),url("vRaR6-og.png");
+    background-origin: border-box;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:17%;
+
+}
+
+#VR\/AR:hover {
+    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)), url("vRaR6.png");
+    width:100%;
+    transition: 0.5s;
+    position: static;
+    content-visibility: visible;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+}
+
+#development li {
+    margin:5px;
+    display: inline-block;
+    border:hidden;
+    min-height: 80vh;
+    padding-bottom: 3px;
+    z-index: 1;
+    order: 1;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1px;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #ffffff;
+    writing-mode: vertical-lr;
+    text-orientation: sideways;
+    transition: background-image  0.3s ease;
+    transform: scale(-1);
+    margin-inside: var(0);
+    width:25%;
+}
+
+
+
+#DB {
+    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)),url("DB1-og.png");
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    background-position:center;
+    width:25%;
+}
+
+#DB:hover {
+    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)), url("DB1.jpg");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    transition: 0.2s;
+    position: static;
+    content-visibility: visible;
+    width: 100%;
+}
+
+#banks {
+    background-position:center;
+    background-size: cover;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)),url("bank2-og.png");
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    position: relative;
+    background-repeat: no-repeat;
+    justify-content: center;
+    width: 25%;
+}
+
+#banks:hover {
+    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)), url("bank2.png");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    width:100%;
+    transition: 0.2s;
+    position: relative;
+    content-visibility: visible;
+
+}
+
+#agents {
+    background-position:center;
+    background-size: cover;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)),url("agents3-og.png");
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    position: relative;
+    background-repeat: no-repeat;
+    justify-content: center;
+    width:25%;
+}
+
+#agents:hover {
+    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)), url("agents3.png");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    width:100%;
+    transition: 0.2s;
+    position: relative;
+    content-visibility: visible;
+
+}
+
+#app {
+    background-position:center;
+    background-size: cover;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)),url("app4-og.jpg");
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    position: relative;
+    background-repeat: no-repeat;
+    justify-content: center;
+    width:25%;
+}
+
+#app:hover {
+    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)), url("app4.jpg");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    width:100%;
+    transition: 0.2s;
+    position: relative;
+    content-visibility: visible;
+}
