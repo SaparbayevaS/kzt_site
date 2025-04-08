@@ -139,3 +139,31 @@ function displayResults(filteredHouses) {
         resultsDiv.appendChild(houseElement);
     });
 }
+document.querySelectorAll('.info-item').forEach(item => {
+    item.addEventListener('mouseenter', function() {
+      let imagePath = ''; 
+      // Определим изображение для каждого пункта
+      if (this.id === 'item1') {
+        imagePath = 'https://images.unsplash.com/photo-1742590794223-5e55f1c9e63f?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; 
+      } else if (this.id === 'item2') {
+        imagePath = 'https://images.unsplash.com/photo-1742590794223-5e55f1c9e63f?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; 
+      } else if (this.id === 'item3') {
+        imagePath = 'https://images.unsplash.com/photo-1742590794223-5e55f1c9e63f?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; 
+      } else if (this.id === 'item4') {
+        imagePath = 'https://images.unsplash.com/photo-1742590794223-5e55f1c9e63f?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; 
+      }
+      
+      // Показываем изображение в маленьком окошке
+      const popup = document.getElementById('image-popup');
+      const img = popup.querySelector('img');
+      img.src = imagePath;
+      popup.style.display = 'flex'; // Показываем окошко
+    });
+  
+    item.addEventListener('mouseleave', function() {
+      const popup = document.getElementById('image-popup');
+      popup.style.display = 'none'; // Скрываем окошко, когда курсор уходит
+    });
+  });
+  
+  

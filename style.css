@@ -1,524 +1,351 @@
-#image-container {
-    position: relative;
-    width: 100%;
-    height: 98vh;
-    background-size: cover;
-    background-position: center;
-    opacity: 0; 
-    transition: opacity 1s ease-in-out;
+* {
     margin: 0;
     padding: 0;
-    display: block;
+    box-sizing: border-box;
+    font-family: 'Cattedrale';
+  }
+
+  body, html {
+    height: 100%;
+    width: 100%;
+  }
+
+  header {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+  .bg-video {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%); /* Центрирование видео */
+width: 100%; /* Фиксированная ширина */
+height: 100%; /* Фиксированная высота */
+object-fit: cover; /* Сохранение пропорций */
+z-index: 0;
 }
 
-#image-container::before {
-    content: '';
+
+  .overlay {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); 
-    z-index: 1; 
-}
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
 
-#image-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    text-align: center;
-    font-size: 1.5em;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  .header-box {
+    position: relative;
     z-index: 2;
-}
-
-#title {
-    font-weight: bold;
-    font-size: 2em;
-}
-
-#text {
-    font-size: 1.2em;
-}/* Общие стили для страницы */
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-/* Общий стиль для формы поиска */
-#search {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
     padding: 30px;
-    background-color: #fff;
-    margin-top: 30px;
-    font-family: 'Roboto', sans-serif;
+    max-width: 1000px;
+    width: 60%;
     display: flex;
-    flex-wrap: wrap; /* Элементы будут автоматически переноситься на новую строку */
-    gap: 20px; /* Расстояние между элементами */
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 60%;
+  }
+
+  .top-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .left-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .right-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .header-box h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto 0;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
+  }
+
+  .bottom-button {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+    width: 100%;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
+  }
+
+  input[type="text"] {
+    padding: 6px 10px;
+    border-radius: 5px;
+    border: none;
+  }
+
+  .btn-purple {
+    background-color: #156b29;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+
+  .btn-outline {
+    background-color: white;
+    color: black;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+
+@font-face {
+    font-family: 'Cattedrale';
+    src: url('Alice-Regular.ttf') format('truetype');
+  }
+.info-title {
+font-size: 4.5rem;
+font-weight: bold;
+margin-bottom: 20px;
+text-transform: uppercase;
+text-align: center;
+font-family: 'Cattedrale';
+}
+
+.info-text {
+font-size: 1.5rem;
+color: #555;
+line-height: 1.6;
+max-width: 800px;
+margin: 0 auto;
+text-align: center;
+font-family: 'Cattedrale';
+}
+#back {
+    background: url('https://cdn.pixabay.com/photo/2018/11/07/11/38/mountain-3800239_960_720.jpg') no-repeat center center;
+    background-size: cover; /* Чтобы растянуть фон по ширине и высоте */
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный темный фон */
+    color: white; /* Белый цвет текста для контраста */
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для заголовка */
+}
+
+.hero h3 {
+    font-size: 20px;
+    color: #ddd; /* Светлый цвет для подзаголовка */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для подзаголовка */
+}
+
+.hero p {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    color: #ddd; /* Светлый цвет текста для параграфа */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Тень для текста */
+}
+
+.hero-image {
+    max-width: 500px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+.features-table {
+    width: 100%;
+    padding: 0 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.feature-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.feature-title {
+    font-weight: bold;
+    width: 35%;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.feature-desc {
+    width: 65%;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 0;
+}
+
+  #search {
+  padding: 30px;
+  background-color: #fff;
+  margin-top: 30px;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-wrap: wrap; /* Элементы будут автоматически переноситься на новую строку */
+  gap: 20px; /* Расстояние между элементами */
 }
 
 /* Заголовок формы */
 #search h2 {
-    font-size: 1.8em;
-    color: #333;
-    margin-bottom: 20px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    width: 100%;
+  font-size: 2.2em;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: 100%;
 }
 
 /* Стили для меток */
 #search label {
-    display: block;
-    margin-bottom: 8px;
-    color: #555;
-    font-size: 1em;
-    font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+  font-size: 1em;
+  font-weight: bold;
 }
 
 /* Стили для селекторов */
 #search select {
-    width: 48%; /* Каждый select будет занимать почти половину ширины */
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1em;
-    color: #333;
-    background-color: #fff;
-    transition: border-color 0.3s ease;
+  width: 48%; /* Каждый select будет занимать почти половину ширины */
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+  color: #333;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
 }
 
 /* Стили для фокуса на полях ввода */
 #search select:focus {
-    outline: none;
-    border-color: #000;
+  outline: none;
+  border-color: #000;
 }
 
 /* Стили для кнопки поиска */
 #search button {
-    width: 100%;
-    padding: 12px;
-    background-color: #000;
-    color: #fff;
-    font-size: 1.2em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    letter-spacing: 1px;
+  width: 100%;
+  padding: 12px;
+  background-color: #000;
+  color: #fff;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  letter-spacing: 1px;
 }
 
 #search button:hover {
-    background-color: #333;
+  background-color: #333;
 }
 
 /* Стили для блоков с результатами */
 #results {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 .house {
-    padding: 20px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .house h3 {
-    margin-top: 0;
-    font-size: 1.5em;
-    color: #333;
-    font-weight: bold;
+  margin-top: 0;
+  font-size: 1.5em;
+  color: #333;
+  font-weight: bold;
 }
 
 .house p {
-    margin: 8px 0;
-    color: #555;
-    font-size: 1em;
+  margin: 8px 0;
+  color: #555;
+  font-size: 1em;
 }
 
 .house p span {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 /* Уведомление, если нет результатов */
 #results p {
-    color: #f44336;
-    font-size: 1.2em;
-    text-align: center;
+  color: #f44336;
+  font-size: 1.2em;
+  text-align: center;
 }
 
 /* Стили для контейнера, чтобы уместить только 3 ряда */
 #search {
-    max-height: 600px; /* Ограничиваем высоту формы */
-    overflow-y: auto;  /* Если содержимое не вмещается, добавляем прокрутку */
+  max-height: 600px; /* Ограничиваем высоту формы */
+  overflow-y: auto;  /* Если содержимое не вмещается, добавляем прокрутку */
 }
 
 /* Для контейнера цены */
 #search #maxPrice {
-    width: 48%; /* Выравнивание для контейнера цен с другими селектами */
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1em;
-    color: #333;
-    background-color: #fff;
-    transition: border-color 0.3s ease;
+  width: 48%; /* Выравнивание для контейнера цен с другими селектами */
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+  color: #333;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
 }
 
 /* Стили для выравнивания лейблов и полей ввода */
 #search select, #search #maxPrice {
-    box-sizing: border-box; /* Для правильного расчета ширины */
-}
-
-.content ul {
-    cursor: pointer;
-    width: 100%;
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    flex:1;
-    text-align: center;
-    list-style: none;
-}
-
-#development h2,
-#features h2 {
-    text-align: center;
-    color: #3a3a3a;
-}
-#features {
-    padding-top: 50px;
-}
-
-#development {
-    padding-top: 150px;
-}
-
-#features li {
-    min-height: 70vh;
-    margin-top:3px;
-    padding-bottom: 3px;
-    z-index: 1;
-    order: 1;
-    display: inline-block;
-    cursor: pointer;
-    border:hidden;
-    font-size: 20px;
-    font-weight: bold;
-    line-height: 1px;
-    text-decoration: none;
-    white-space: nowrap;
-    color: #ffffff;
-    writing-mode: vertical-lr;
-    text-orientation: sideways;
-    transition: background-image  0.3s ease;
-    transform: scale(-1);
-    margin-inside: var(0);
-    background-position:center;
-
-}
-
-#map {
-    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)),url("map1-og.jpg");
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    justify-items: center;
-    text-align: center;
-    position: relative;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width:17%;
-
-}
-
-#map:hover {
-    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)), url("map1.jpg");
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    width:100%;
-    transition: 0.2s;
-    position: static;
-    content-visibility: visible;
-}
-
-#price {
-    background-origin: border-box;
-    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)),url("pred2-og.png");
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    justify-items: center;
-    text-align: center;
-    position: relative;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width:17%;
-
-}
-
-
-#price:hover {
-    background-size: cover;
-    background-position: bottom;
-    text-align: center;
-    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)), url("pred2.png");
-    width:100%;
-    transition: 0.2s;
-    position: static;
-    content-visibility: visible;
-
-}
-
-#ipoteka {
-
-    background-origin: border-box;
-    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)),url("pay3-og.png");
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    justify-items: center;
-    text-align: center;
-    position: relative;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width:17%;
-
-}
-
-#ipoteka:hover {
-    background-size: cover;
-    text-align: center;
-    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)), url("pay3.jpg");
-    width:100%;
-    transition: 0.5s;
-    position: static;
-    content-visibility: visible;
-    background-position: center;
-}
-
-#reviews {
-    background-origin: border-box;
-    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)),url("reviews4-og.png");
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    justify-items: center;
-    text-align: center;
-    position: relative;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width:17%;
-}
-
-#reviews:hover {
-    background-size: cover;
-    text-align: center;
-    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)), url("reviews4.png");
-    width:100%;
-    transition: 0.5s;
-    position: static;
-    content-visibility: visible;
-    background-position: center;
-
-}
-
-#newPpl {
-
-    background-origin: border-box;
-    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)),url("Ppl5-og.png");
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    justify-items: center;
-    text-align: center;
-    position: relative;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width:17%;
-
-}
-
-#newPpl:hover {
-    background-size: cover;
-    text-align: center;
-    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)), url("Ppl5.png");
-    width:100%;
-    transition: 0.5s;
-    position: static;
-    content-visibility: visible;
-    background-position: center;
-}
-
-#VR\/AR {
-    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)),url("vRaR6-og.png");
-    background-origin: border-box;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    justify-items: center;
-    text-align: center;
-    position: relative;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width:17%;
-
-}
-
-#VR\/AR:hover {
-    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)), url("vRaR6.png");
-    width:100%;
-    transition: 0.5s;
-    position: static;
-    content-visibility: visible;
-    background-position: center;
-    background-size: cover;
-    text-align: center;
-}
-
-#development li {
-    margin:5px;
-    display: inline-block;
-    border:hidden;
-    min-height: 80vh;
-    padding-bottom: 3px;
-    z-index: 1;
-    order: 1;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: bold;
-    line-height: 1px;
-    text-decoration: none;
-    white-space: nowrap;
-    color: #ffffff;
-    writing-mode: vertical-lr;
-    text-orientation: sideways;
-    transition: background-image  0.3s ease;
-    transform: scale(-1);
-    margin-inside: var(0);
-    width:25%;
-}
-
-
-
-#DB {
-    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)),url("DB1-og.png");
-    align-content: center;
-    align-items: center;
-    justify-items: center;
-    text-align: center;
-    position: relative;
-    background-repeat: no-repeat;
-    background-size: cover;
-    justify-content: center;
-    background-position:center;
-    width:25%;
-}
-
-#DB:hover {
-    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)), url("DB1.jpg");
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    transition: 0.2s;
-    position: static;
-    content-visibility: visible;
-    width: 100%;
-}
-
-#banks {
-    background-position:center;
-    background-size: cover;
-    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)),url("bank2-og.png");
-    align-content: center;
-    align-items: center;
-    justify-items: center;
-    text-align: center;
-    position: relative;
-    background-repeat: no-repeat;
-    justify-content: center;
-    width: 25%;
-}
-
-#banks:hover {
-    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)), url("bank2.png");
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    width:100%;
-    transition: 0.2s;
-    position: relative;
-    content-visibility: visible;
-
-}
-
-#agents {
-    background-position:center;
-    background-size: cover;
-    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)),url("agents3-og.png");
-    align-content: center;
-    align-items: center;
-    justify-items: center;
-    text-align: center;
-    position: relative;
-    background-repeat: no-repeat;
-    justify-content: center;
-    width:25%;
-}
-
-#agents:hover {
-    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)), url("agents3.png");
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    width:100%;
-    transition: 0.2s;
-    position: relative;
-    content-visibility: visible;
-
-}
-
-#app {
-    background-position:center;
-    background-size: cover;
-    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)),url("app4-og.jpg");
-    align-content: center;
-    align-items: center;
-    justify-items: center;
-    text-align: center;
-    position: relative;
-    background-repeat: no-repeat;
-    justify-content: center;
-    width:25%;
-}
-
-#app:hover {
-    background-image: linear-gradient(rgba(4, 9, 30, 0.44), rgba(4, 9, 30, 0.44)), url("app4.jpg");
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    width:100%;
-    transition: 0.2s;
-    position: relative;
-    content-visibility: visible;
-}
-
-footer {
-    color: #333333;
-    text-align: center;
+  box-sizing: border-box; /* Для правильного расчета ширины */
 }

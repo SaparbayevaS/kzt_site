@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canopy Clone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <video autoplay muted loop playsinline class="bg-video">
+          <source src="143861-784164182_small.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="overlay"></div>
+      
+        <div class="header-box">
+          <div class="top-controls">
+            <div class="left-controls">
+              <div class="logo">Üitap</div>
+            </div>
+            <div class="right-controls">
+              <input type="text" placeholder="Іздеу">
+              <button class="btn-purple">Тіркелу</button>
+              <button class="btn-outline">Мәзір</button>
+            </div>
+          </div>
+      
+          <h1>Сіздің бюджетіңізге сай <br> ең жақсы тұрғын үйді<br>табуға көмектесетін сервис</h1>
+      
+          <div class="bottom-button">
+            <a href="#search">
+                <button class="btn-outline">Үй алу →</button>
+            </a>
+          </div>
+        </div>
+      </header>
+      
+
+  <main>
+
+    <section id="info" class="content">
+        <br>
+        <br>
+        <br>
+        <br>
+        <h2 class="info-title">Пәтер немесе үй сатып алу – маңызды шешім</h2>
+        <p class="info-text">Тұрғын үйді дұрыс таңдау үшін сізге инфрақұрылым, болашақ даму, тұрғын үй кешенінің жайлылығы және төлем тәсілдерінің тиімділігі маңызды рөл атқарады. Біздің сервис осы мәселелердің бәрін шешуге көмектеседі.</p>
+        <br>
+        <br>
+        <br>
+        <br>
+    </section>    
+<section id="back">
+    <section class="hero">
+        <h1>Жобаның мүмкіндіктері</h1>
+        <img src="image.png" alt="3D land model" class="hero-image">
+      </section>
+      <section class="features-table">
+        <div class="feature-row">
+          <div class="feature-title">Инфрақұрылым картасы</div>
+          <div class="feature-desc">Аймақтағы мектептер, дүкендер, ауруханалар, көлік қатынасы туралы деректер..</div>
+        </div>
+        <hr>
+        <div class="feature-row">
+          <div class="feature-title">Баға өзгеруін болжау</div>
+          <div class="feature-desc">Нарық динамикасы, баға өсетін немесе төмендейтінін болжау.</div>
+        </div>
+        <hr>
+        <div class="feature-row">
+          <div class="feature-title">Ипотека және төлем тәсілдері</div>
+          <div class="feature-desc">Банк серіктестіктері арқылы ең тиімді қаржылық жоспарды таңдау.
+          </div>
+        </div>
+        <hr>
+        <div class="feature-row">
+            <div class="feature-title">Қолданушылар пікірлері мен рейтингтер </div>
+            <div class="feature-desc">Пәтер сапасы, коммуналдық шығындар, көршілер туралы шынайы пікірлер.
+            </div>
+        </div>
+        <hr>
+        <div class="feature-row">
+            <div class="feature-title">Жаңа аудандар туралы ақпарат</div>
+            <div class="feature-desc">Әлі салынып жатқан немесе болашақта дамитын аймақтар жайлы мәлімет.
+            </div>
+        </div>
+        <hr>
+        <div class="feature-row">
+            <div class="feature-title">VR/AR мүмкіндігі</div>
+            <div class="feature-desc">Кейбір кешендерді онлайн 3D форматта аралау.
+            </div>
+        </div>
+      </section>
+    </section>
+    <section id="search" class="content">
+        <h2>Тұрғын үй іздеу</h2>
+        <select id="city">
+            <option value="">Барлық қалалар</option>
+            <option value="Алматы">Алматы</option>
+            <option value="Астана">Астана</option>
+            <option value="Шымкент">Шымкент</option>
+            <option value="Ақтөбе">Ақтөбе</option>
+            <option value="Қарағанды">Қарағанды</option>
+        </select>
+
+        <input type="number" id="maxPrice" placeholder="Баға. Мысалы: 50">
+        <select id="paymentMethod">
+            <option value="">Барлық төлем тәсілдері</option>
+            <option value="ипотека">Ипотека</option>
+            <option value="рассрочка">Рассрочка</option>
+            <option value="толық рассрочка">Толық Рассрочка</option>
+            <option value="балонный платеж">Балонный платеж</option>
+        </select>
+
+        <select id="builderTrust">
+            <option value="">Барлық салушылар</option>
+            <option value="senim">Сенімді</option>
+            <option value="untrusted">Сенімсіз</option>
+        </select>
+    
+        <select id="locationFuture">
+            <option value="">Барлық орындар</option>
+            <option value="developing">Дамып келе жатқан</option>
+            <option value="established">Қалыптасқан</option>
+        </select>
+    
+        <button onclick="searchHousing()">Іздеу</button>
+    
+        <div id="results"></div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
