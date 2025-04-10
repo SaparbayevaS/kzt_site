@@ -85,13 +85,13 @@
             </div>
         </div>
         <hr>
-        <div class="feature-row">
-            <div class="feature-title">VR/AR мүмкіндігі</div>
-            <div class="feature-desc">Кейбір кешендерді онлайн 3D форматта аралау.
-            </div>
+        <div class="feature-row" onclick="openVideoModal()">
+          <div class="feature-title">VR/AR мүмкіндігі</div>
+          <div class="feature-desc">Кейбір кешендерді онлайн 3D форматта аралау.</div>
         </div>
+        
       </section>
-    </section>
+    </section>  
     <section id="search" class="content">
         <h2>Тұрғын үй іздеу</h2>
         <select id="city">
@@ -128,7 +128,18 @@
     
         <div id="results"></div>
     </section>
+    
   </main>
+  
   <script src="script.js"></script>
+  <div id="videoModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeVideoModal()">&times;</span>
+      <video controls autoplay class="modal-video">
+        <source src="final.mp4" type="video/mp4">
+        Сіздің браузеріңіз бейне тегін қолдамайды.
+      </video>
+    </div>
+  </div>  
 </body>
 </html>

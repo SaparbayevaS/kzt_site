@@ -165,5 +165,30 @@ document.querySelectorAll('.info-item').forEach(item => {
       popup.style.display = 'none'; // Скрываем окошко, когда курсор уходит
     });
   });
+  function openVideoModal() {
+    document.getElementById('videoModal').style.display = 'flex';
+  }
   
+  function closeVideoModal() {
+    const modal = document.getElementById('videoModal');
+    modal.style.display = 'none';
+    modal.querySelector('video').pause(); // останавливаем видео
+  }
+  
+  // Закрытие по клику вне окна
+  window.onclick = function(event) {
+    const modal = document.getElementById('videoModal');
+    if (event.target === modal) {
+      closeVideoModal();
+    }
+  }
+  
+  // Закрытие по Esc
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closeVideoModal();
+    }
+  });
+  
+    
   
